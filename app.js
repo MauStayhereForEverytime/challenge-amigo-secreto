@@ -39,3 +39,44 @@ function mostrarAmigos() {
     lista.appendChild(li);
 }); */
 }
+
+function sortearAmigo() {
+    if (listaDeAmigos.length === 0) {
+        alert('No hay amigos para sortear.');
+        return;
+    }
+    // Generar un índice aleatorio
+    var indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+    // Obtener el nombre sorteado
+    var amigoSorteado = listaDeAmigos[indiceAleatorio];
+    // Mostrar el resultado
+    var resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `<li>El amigo sorteado es: ${amigoSorteado}</li>`;
+    // Funcion para sortear amigos mas compleja
+    // Validar que haya al menos dos amigos en la lista
+    /* if (listaDeAmigos.length < 2) {
+        alert('Necesitas al menos dos amigos para hacer un sorteo.');
+        return;
+    }  
+    var amigosSorteados = [...listaDeAmigos]; // Copiar la lista de amigos
+    var resultados = {};
+    amigosSorteados.forEach(amigo => {
+        // Filtrar la lista de amigos para excluir al amigo actual
+        var posiblesAmigos = amigosSorteados.filter(a => a !== amigo);
+        // Seleccionar un amigo al azar de los posibles
+        var amigoSorteado = posiblesAmigos[Math.floor(Math.random() * posiblesAmigos.length)];
+        // Asignar el amigo sorteado al amigo actual
+        resultados[amigo] = amigoSorteado;
+        // Mostrar el resultado en el html
+        var resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = '';
+        for (var key in resultados) {
+            var p = document.createElement('p');
+            p.textContent = key + ' ha sacado a ' + resultados[key];
+            resultadoDiv.appendChild(p);
+        }   
+    });  */
+    // Limpiar la lista de amigos después del sorteo
+    listaDeAmigos = [];
+    mostrarAmigos(); // Actualizar la lista en el HTML
+}

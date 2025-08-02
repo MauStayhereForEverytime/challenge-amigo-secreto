@@ -9,6 +9,7 @@ function agregarAmigo() {
     if (nombre && !listaDeAmigos.includes(nombre)) {
         listaDeAmigos.push(nombre);
         input.value = ''; // Limpiar el input
+        mostrarAmigos(); // Llama a la función para actualizar la lista en el HTML
     } else {
         if (!nombre) {
             alert('Por favor inserte un nombre.');
@@ -19,7 +20,7 @@ function agregarAmigo() {
 }
 
 function mostrarAmigos() {
-    var lista = document.getElementById('lista');
+    var lista = document.getElementById('listaAmigos');
     lista.innerHTML = ''; // Limpiar la lista antes de mostrar los amigos
     if (listaDeAmigos.length === 0) {
         lista.innerHTML = '<li>No hay amigos agregados.</li>';

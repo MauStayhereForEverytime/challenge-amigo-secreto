@@ -76,7 +76,6 @@ function sortearAmigo() {
             resultadoDiv.appendChild(p);
         }   
     });  */
-    // Limpiar la lista de amigos después del sorteo
-    listaDeAmigos = [];
+    // 
     mostrarAmigos(); // Actualizar la lista en el HTML
 }
